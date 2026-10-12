@@ -6,12 +6,37 @@
   text-decoration: underline;
   text-underline-offset: 3px;
   text-decoration-thickness: 1px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
 }
-.demo-link--default { color: #174bce; }
-.demo-link--muted { color: #4b5563; }
-.demo-link:hover { text-decoration-thickness: 2px; }
-.demo-link:focus-visible { outline: 3px solid #13223d; outline-offset: 3px; border-radius: 2px; }
-.demo-link__arrow { display: inline-block; margin-left: 6px; text-decoration: none; }
+
+.demo-link--default {
+  color: #26374A;
+}
+
+.demo-link--muted {
+  color: #627b9e;
+}
+
+.demo-link:hover {
+  text-decoration-thickness: 2px;
+}
+
+.demo-link:focus-visible {
+  outline: 3px solid #13223d;
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+.demo-link__arrow {
+  display: block;
+  width: 16px;
+  height: 16px;
+  margin-left: 0;
+  flex-shrink: 0;
+}
+
 .demo-link__sr-only {
   position: absolute;
   width: 1px;
