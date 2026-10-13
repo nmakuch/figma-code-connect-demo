@@ -18,7 +18,7 @@ Scope: Two components, a React repository, a Figma library, and authored CLI tem
 | --- | --- | --- |
 | 1. Problem and question | How do developers find the correct component and its props from a design? | One unconnected Figma instance and its Inspect output |
 | 2. Test setup | Two code components, their Figma equivalents, and two mapping templates | Repository and small Figma library |
-| 3. Mapping contract | Variant, Size, State, Label, and New tab | Property mapping table from README |
+| 3. Mapping contract | Variant, Size, State, Label, and External | Property mapping table from README |
 | 4. Live demonstration | Change a Button and Link instance; inspect the resulting usage examples | Figma Dev Mode, then the working local components |
 | 5. Findings | Record what worked, what needed manual mapping, and actual setup time | Completed observation table below |
 | 6. Next decision | Assess one real component with someone familiar with the production codebase | Questions about APIs, ownership, and maintenance |
@@ -30,7 +30,7 @@ Scope: Two components, a React repository, a Figma library, and authored CLI tem
 3. Open Button.figma.ts. Highlight the library-node URL, the source path, and the State-to-Boolean mapping.
 4. Select a Button instance. Start with Primary / Medium / Default and `Save changes`. Inspect it in Dev Mode.
 5. Switch to Design mode if needed. Change to Secondary / Small / Disabled and label `Continue`. Return to Dev Mode and check each prop and the text in the snippet.
-6. Select a Link instance, change Default to Muted, and enable New tab. Confirm the prop and label output. Point out that href is a fixed demonstration destination chosen in the template.
+6. Select a Link instance, change Default to Muted, and enable External. Confirm the prop and label output. Point out that href is a fixed demonstration destination chosen in the template.
 7. Show the local playground. Compare the same props with the real rendered Button and Link. Demonstrate that disabled prevents activation and that the Link retains native anchor behavior.
 8. Describe the maintenance boundary: instance values update the snippet through the published template; changes to the mapping itself require editing and republishing it.
 
@@ -49,7 +49,7 @@ Fill this in after running the Figma integration. The starter's local build does
 | Label → Continue | children changes to Continue | | |
 | Select Link | Correct component and import shown | | |
 | Default → Muted | variant changes to muted | | |
-| New tab off → on | newTab changes to true | | |
+| External off → on | newTab changes to true | | |
 | Instance in consumer file | Same mapped output is available | | |
 | Copy snippet into src consumer | Resolves imports and renders the expected component | | |
 | Edit mapping, then republish | Updated template is available in Dev Mode | | |

@@ -4,13 +4,13 @@ import "./Link.css";
 export type LinkProps = Omit<ComponentPropsWithoutRef<"a">, "href" | "target" | "rel"> & {
   href: string;
   variant?: "default" | "muted";
-  newTab?: boolean;
+  external?: boolean;
 };
 
 export function Link({
   href,
   variant = "default",
-  newTab = false,
+  external = false,
   className = "",
   children,
   ...props
@@ -19,12 +19,12 @@ export function Link({
     <a
       {...props}
       href={href}
-      target={newTab ? "_blank" : undefined}
-      rel={newTab ? "noopener noreferrer" : undefined}
+      target={external ? "_blank" : undefined}
+      rel={external ? "noopener noreferrer" : undefined}
       className={`demo-link demo-link--${variant} ${className}`.trim()}
     >
       {children}
-      {newTab && (
+      {external && (
         <>
           <span className="demo-link__arrow" aria-hidden="true">
             <svg

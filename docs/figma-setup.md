@@ -52,9 +52,9 @@ State is deliberately a variant, since the disabled appearance changes the whole
 4. Put both layers in a horizontal Auto Layout frame, with a 6px gap, centered vertically, hug contents for width/height, and no fill or border.
 5. Convert the frame into a main component and name it Link.
 6. Expose the label's text as a Text property named **Label**.
-7. Expose the Arrow layer's visibility as a Boolean property named **New tab**, default false. Bind this Boolean property to the arrow layer's visibility.
+7. Expose the Arrow layer's visibility as a Boolean property named **External**, default false. Bind this Boolean property to the arrow layer's visibility.
 
-Do not create a Boolean property without binding it to the Arrow layer: the component should visibly respond when you toggle New tab on an instance.
+Do not create a Boolean property without binding it to the Arrow layer: the component should visibly respond when you toggle External on an instance.
 
 ## Link: add the variants
 
@@ -65,11 +65,11 @@ Add a second variant and rename the set Link. Configure one Variant property nam
 | Default | `#174BCE` |
 | Muted | `#4B5563` |
 
-In both variants, bind the text to the same Label property and the Arrow visibility to the same New tab property. Keep the arrow as its own layer so the Boolean does not hide the whole link.
+In both variants, bind the text to the same Label property and the Arrow visibility to the same External property. Keep the arrow as its own layer so the Boolean does not hide the whole link.
 
 There are only two main variants. The Boolean creates the arrow's two visibility states without doubling the main variants.
 
-Create an instance on the Demo page. Verify that selecting it exposes Variant, Label, and New tab. Change the label, switch the variant, and toggle the arrow.
+Create an instance on the Demo page. Verify that selecting it exposes Variant, Label, and External. Change the label, switch the variant, and toggle the arrow.
 
 ## Publish and make the demo frame
 
